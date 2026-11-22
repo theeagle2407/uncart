@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Uncart · Before you buy</title><link rel="icon" href="/mark.svg"><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body><header class="top"><a class="brand" href="/"><img src="/mark.svg" alt="" width="34" height="34">Uncart</a><span id="runtime" class="status">Local edition</span></header>
+<main>
+  <section class="intro"><div class="kicker"><i></i> THE PURCHASE CHECK</div><h1>Before you <em>buy it.</em></h1><p>Could something you already own do the job?</p></section>
+  <div class="layout">
+    <section class="sheet" aria-label="Check a purchase">
+      <div id="inputs">
+        <h2>Check a purchase</h2>
+        <form id="first">
+          <label for="link">Product or upgrade link</label><input id="link" type="url" required maxlength="2000" placeholder="https://…" autocomplete="off">
+          <label for="goal">What do you need it to do?</label><textarea id="goal" rows="2" required maxlength="500" placeholder="I want to show my notebook on a video call."></textarea>
+          <div class="actions"><button class="primary" id="next">Continue</button></div>
+        </form>
+        <section id="follow" hidden>
+          <div class="recap"><div><span>YOUR GOAL</span><p id="goal-summary"></p></div><button id="edit" class="textbutton">Edit</button></div>
+          <form id="second"><label for="owned" id="question">What do you already own?</label><textarea id="owned" rows="3" required maxlength="650" placeholder="Include model names or measurements."></textarea>
+          <details id="refdetails"><summary>Add a reference <small>(optional)</small></summary><label for="reference">Official manual, product or policy link</label><input id="reference" type="url" maxlength="2000" placeholder="https://…"><small>Useful for purchases outside the two starter cases.</small></details>
+          <p id="privacy" class="fine">Live checks send these details to Cerebras through OpenClaw. Only use public links.</p>
+          <div class="actions"><button class="primary" id="live">Check live</button><button class="textbutton" type="button" hidden id="cancel">Cancel</button></div>
+          </form>
+        </section>
+      </div>
+      <section id="result" tabindex="-1" hidden aria-label="Purchase decision">
+        <div class="row"><span class="tag" id="mode"></span><span class="verdict" id="verdict"></span></div>
+        <h2 id="headline"></h2><p class="reason" id="reason"></p>
+        <div id="steps-block"><h3>Try this</h3><ol id="steps"></ol></div>
+        <div id="needs-block"><h3>Check first</h3><ul id="needs"></ul></div>
+        <div id="proof-block"><h3>Where this comes from</h3><div id="proof"></div></div>
+        <div id="facetime-block" hidden><button id="facetime" class="primary" type="button">Open FaceTime on my Mac</button><p class="fine">Opens the app only. You choose the camera, permissions and whether to call.</p></div>
+        <details id="run"><summary>Check details</summary><p id="runinfo"></p></details>
+        <div class="actions"><button id="again" class="primary">Check another item</button><button id="reuse" class="soft" hidden>Use as live input</button><button id="tried" class="soft" hidden>I tried it</button></div>
+      </section>
+      <p id="notice" role="status" aria-live="polite" hidden></p>
+    </section>
+    <aside class="aside"><div class="aside-head"><span class="kicker">QUICK LOOK</span><h2>Worked examples</h2><p>Explore a saved check. No model call.</p></div>
+      <button class="sample" id="sample-desk"><span class="art camera" aria-hidden="true"><svg viewBox="0 0 72 72"><rect x="18" y="13" width="25" height="38" rx="5"/><circle cx="25" cy="21" r="3"/><path d="m45 35 11 14v9H27m9-7 5 7"/><path class="thin" d="M18 58h7m26-38h7m-4-4v8"/></svg></span><span><strong>Desk camera</strong><small>Gear you might not need</small></span></button>
+      <button class="sample" id="sample-bag"><span class="art bag" aria-hidden="true"><svg viewBox="0 0 72 72"><path d="M30 20v-2a6 6 0 0 1 12 0v2"/><rect x="19" y="20" width="34" height="38" rx="9"/><path d="M25 41h22v10H25zm2-12h18"/><path class="thin" d="M13 62h46m-46-2v4m46-4v4"/></svg></span><span><strong>Cabin bag</strong><small>Check the included allowance</small></span></button>
+    </aside>
+  </div>
+  <footer><span>Uncart</span><span>Built for OpenClaw × Cerebras</span></footer>
+</main></body></html>
